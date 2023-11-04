@@ -8,13 +8,13 @@ function Book(title, author, pages, read = false) {
 }
 
 function toggleReadStatus(e) {
-    const index = e.target.parentNode.getAttribute("data-book-id");
+    const index = e.target.parentNode.parentNode.getAttribute("data-book-id");
     myLibrary[index].read = !myLibrary[index].read;
     displayBooks();
 }
 
 function deleteBook(e) {
-    const index = e.target.parentNode.getAttribute("data-book-id");
+    const index = e.target.parentNode.parentNode.getAttribute("data-book-id");
     myLibrary.splice(index, 1);
     displayBooks();
 }
@@ -29,48 +29,63 @@ function displayBooks() {
     grid.replaceChildren();
     myLibrary.forEach((book, index) => {
         const card = document.createElement("div");
+        const content = document.createElement("div");
+        content.classList.add("card-content");
+        content.setAttribute("data-book-id", index);
         card.classList.add("card");
-        card.setAttribute("data-book-id", index);
+
         const imgPlaceholder = document.createElement("img");
         imgPlaceholder.alt = "Cover";
+        imgPlaceholder.setAttribute("src", "https://picsum.photos/id/24/150/200");
         card.appendChild(imgPlaceholder);
-        const title = document.createElement("div");
-        title.innerText = book.title;
-        const author = document.createElement("div");
-        author.innerText = book.author;
 
-        const pages = document.createElement("div");
-        pages.innerText = book.pages + " pages";
+        const header = document.createElement("div");
+        header.classList.add("header");
+        const title = document.createElement("h5");
+        title.classList.add("primary-title");
+        title.innerText = book.title;
 
         const status = document.createElement("div");
         status.innerText = book.read ? "Read" : "Not Read";
         status.classList.add("status");
-                    card.appendChild(title);
-                    card.appendChild(author);
-                    card.appendChild(pages);
-                    card.appendChild(status);
-                const toggleBtn = document.createElement("button");
-                toggleBtn.addEventListener('click', toggleReadStatus);
-                toggleBtn.innerText = "toggle_on";
-                toggleBtn.classList.add("material-symbols-outlined");
-                card.appendChild(toggleBtn);
-                // const toggleDiv = document.createElement("div");
-                // toggleDiv.appendChild(toggleBtn);
-        
-                const deleteBtn = document.createElement("button");
-                const icon = document.createElement("span");
-                icon.classList.add("material-symbols-outlined");
-                icon.innerText = "delete";
-                deleteBtn.appendChild(icon);
-                const text = document.createElement("span");
-                text.innerText = "Delete";
-                deleteBtn.appendChild(text);
-                deleteBtn.classList.add("delete");
-                deleteBtn.addEventListener('click', deleteBook);
-                card.appendChild(deleteBtn);
-                // const delDiv = document.createElement("div");
-                // delDiv.appendChild(deleteBtn);
-                grid.appendChild(card);
+        header.appendChild(title);
+        header.appendChild(status);
+
+        const author = document.createElement("h6");
+        author.innerText = book.author;
+        author.classList.add("secondary-title");
+
+        const pages = document.createElement("div");
+        pages.innerText = book.pages + " pages";
+
+
+        content.appendChild(header);
+        content.appendChild(author);
+        content.appendChild(pages);
+
+        const buttons = document.createElement("div");
+        buttons.classList.add("buttons");
+        const toggleBtn = document.createElement("button");
+        toggleBtn.addEventListener('click', toggleReadStatus);
+        toggleBtn.innerText = "toggle_on";
+        toggleBtn.classList.add("material-symbols-outlined");
+        buttons.appendChild(toggleBtn);
+
+        const deleteBtn = document.createElement("button");
+        const icon = document.createElement("span");
+        icon.classList.add("material-symbols-outlined");
+        icon.innerText = "delete";
+        deleteBtn.appendChild(icon);
+        const text = document.createElement("span");
+        text.innerText = "Delete";
+        deleteBtn.appendChild(text);
+        deleteBtn.classList.add("delete");
+        deleteBtn.addEventListener('click', deleteBook);
+        buttons.appendChild(deleteBtn);
+
+        content.append(buttons);
+        card.appendChild(content);
+        grid.appendChild(card);
     });
 
 }
@@ -106,6 +121,6 @@ submitBtn.addEventListener('click', (e) => {
         modal.close();
         e.preventDefault();
     }
-    
+
 });
 
