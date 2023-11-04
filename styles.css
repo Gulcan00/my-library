@@ -24,6 +24,16 @@ body {
     display: grid;
     grid-template: auto 1fr / 1fr;
     gap: 16px;
+    background-color: var(--coffee);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .table-container {
@@ -102,6 +112,12 @@ nav {
     font-size: 2rem;
     font-weight: 600;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+nav > div {
+    display: flex;
     gap: 8px;
     align-items: center;
 }
@@ -152,10 +168,7 @@ form > div {
     gap: 8px;
 }
 
-.card {
-    border-radius: 6px;
-    border: 1px solid #d1d5db;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+span.card {
     padding: 20px 12px;
     width: 80px;
     cursor: pointer;

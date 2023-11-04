@@ -25,36 +25,53 @@ function addBookToLibrary(book) {
 }
 
 function displayBooks() {
-    const tableBody = document.querySelector("tbody");
-    tableBody.replaceChildren();
-    myLibrary.forEach((book, index) => {
-        const row = tableBody.insertRow();
-        row.setAttribute("data-book-id", index);
-        for (let property in book) {
-            const cell = row.insertCell();
-            if (property === "read") {
-                cell.innerText = book[property] ? "Read" : "Not Read";
-            } else {
-                cell.innerText = book[property];
-            }
-        }
+    // const tableBody = document.querySelector("tbody");
+    // tableBody.replaceChildren();
+    // myLibrary.forEach((book, index) => {
+    //     const row = tableBody.insertRow();
+    //     row.setAttribute("data-book-id", index);
+    //     for (let property in book) {
+    //         const cell = row.insertCell();
+    //         if (property === "read") {
+    //             cell.innerText = book[property] ? "Read" : "Not Read";
+    //         } else {
+    //             cell.innerText = book[property];
+    //         }
+    //     }
 
-        const toggleBtn = document.createElement("button");
-        toggleBtn.addEventListener('click', toggleReadStatus);
-        toggleBtn.innerText = "toggle_on";
-        toggleBtn.classList.add("material-symbols-outlined");
+    //     const toggleBtn = document.createElement("button");
+    //     toggleBtn.addEventListener('click', toggleReadStatus);
+    //     toggleBtn.innerText = "toggle_on";
+    //     toggleBtn.classList.add("material-symbols-outlined");
         
-        const toggleCell = row.insertCell();
-        toggleCell.appendChild(toggleBtn);
+    //     const toggleCell = row.insertCell();
+    //     toggleCell.appendChild(toggleBtn);
 
-        const deleteBtn = document.createElement("button");
-        deleteBtn.innerText = "delete";
-        deleteBtn.classList.add("material-symbols-outlined", "delete");
-        deleteBtn.addEventListener('click', deleteBook);
+    //     const deleteBtn = document.createElement("button");
+    //     deleteBtn.innerText = "delete";
+    //     deleteBtn.classList.add("material-symbols-outlined", "delete");
+    //     deleteBtn.addEventListener('click', deleteBook);
 
-        const delCell = row.insertCell();
-        delCell.appendChild(deleteBtn);
-    });
+    //     const delCell = row.insertCell();
+    //     delCell.appendChild(deleteBtn);
+    // });
+    const grid = document.querySelector("div.grid-container");
+    grid.replaceChildren();
+    myLibrary.forEach((book, index) => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.setAttribute("data-book-id", index);
+        for (let property in book) {
+                    const div = document.createElement("div");
+                    if (property === "read") {
+                        div.innerText = book[property] ? "Read" : "Not Read";
+                    } else {
+                        div.innerText = book[property];
+                    }
+                    card.appendChild(div);
+                }
+                grid.appendChild(card);
+    })
 }
 
 displayBooks();
