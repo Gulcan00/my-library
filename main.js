@@ -44,6 +44,7 @@ function displayBooks() {
         const title = document.createElement("h5");
         title.classList.add("primary-title");
         title.innerText = book.title;
+        title.setAttribute("title", book.title);
 
         const status = document.createElement("div");
         status.innerText = book.read ? "Read" : "Not Read";
