@@ -40,21 +40,15 @@ function createLibrary() {
     const library = createLibrary();
     const grid = document.querySelector("div.grid-container");
 
-    function toggleReadStatus(e) {
+    function handleToggleClick(e) {
         const index = e.target.parentNode.parentNode.getAttribute("data-book-id");
-        const books = library.getBooks();
-        books[index].read = !books[index].read;
+        library.toggleReadStatus(index);
         displayBooks();
     }
     
     function deleteBook(e) {
         const index = e.target.parentNode.parentNode.getAttribute("data-book-id");
         library.removeBook(index);
-        displayBooks();
-    }
-    
-    function addBookToLibrary(book) {
-        library.addBook(book);
         displayBooks();
     }
     
@@ -75,33 +69,36 @@ function createLibrary() {
     
             const header = document.createElement("div");
             header.classList.add("header");
+
+            //Title
             const title = document.createElement("h5");
             title.classList.add("primary-title");
             title.innerText = book.title;
             title.setAttribute("title", book.title);
+            header.appendChild(title);
     
+            //Read status
             const status = document.createElement("div");
             status.innerText = book.read ? "Read" : "Not Read";
             status.classList.add("status");
-            header.appendChild(title);
             header.appendChild(status);
-    
+            
+            content.appendChild(header);
+            
+            //Author
             const author = document.createElement("h6");
             author.innerText = book.author;
             author.classList.add("secondary-title");
-    
-            const pages = document.createElement("div");
-            pages.innerText = book.pages + " pages";
-    
-    
-            content.appendChild(header);
             content.appendChild(author);
+
+            const pages = document.createElement("div");
+            pages.innerText = `${book.pages} pages`;
             content.appendChild(pages);
     
             const buttons = document.createElement("div");
             buttons.classList.add("buttons");
             const toggleBtn = document.createElement("button");
-            toggleBtn.addEventListener('click', toggleReadStatus);
+            toggleBtn.addEventListener('click', handleToggleClick);
             toggleBtn.innerText = "toggle_on";
             toggleBtn.classList.add("material-symbols-outlined");
             buttons.appendChild(toggleBtn);
