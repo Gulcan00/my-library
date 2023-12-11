@@ -1,216 +1,231 @@
 :root {
-/* CSS HEX color palette*/
---magnolia: #f5f0f6ff;
---tiffany-blue: #82d4bbff;
---chefchaouen-blue: #4a8fe7ff;
---coffee: hsl(24, 99%, 29%);
---oxford-blue: #1d263bff;
---ruddy-blue: #6FA5EC;
+  /* CSS HEX color palette*/
+  --magnolia: #f5f0f6ff;
+  --tiffany-blue: #82d4bbff;
+  --chefchaouen-blue: #4a8fe7ff;
+  --coffee: hsl(24, 99%, 29%);
+  --oxford-blue: #1d263bff;
+  --ruddy-blue: #6fa5ec;
 }
 body {
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
-    background-color: var(--magnolia);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #1f2937;
-    overflow-y: auto;
-    padding-top: 100px;
-    box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--magnolia);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+  overflow-y: auto;
+  padding-top: 100px;
+  box-sizing: border-box;
 }
 
 .grid-container {
-    padding-top: 60px;
-    width: 80%;
-    min-height: 200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
-    background-color: var(--coffee);
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 20px;
-    background: var(--coffee) url(/images/wood.png) no-repeat;
-    background-size: cover;
+  padding-top: 60px;
+  width: 80%;
+  min-height: 200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  background-color: var(--coffee);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  background: var(--coffee) url(/images/wood.png) no-repeat;
+  background-size: cover;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 6px;
-    border: 1px solid #d1d5db;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  max-width: 300px;
 }
 
 .card-content {
-    padding: 16px;
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 10px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 10px;
 }
 
-
-button, input {
-    appearance: none;
+button,
+input {
+  appearance: none;
 }
 
 button {
-    background-color: var(--chefchaouen-blue);
-    padding: 8px;
-    color: white;
-    border-radius: 6px;
-    border: none;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    letter-spacing: 1px;
-    justify-self: start;
+  background-color: var(--chefchaouen-blue);
+  padding: 8px;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  letter-spacing: 1px;
+  justify-self: start;
 }
 button:hover {
-    cursor: pointer;
-    background-color: var(--ruddy-blue);
+  cursor: pointer;
+  background-color: var(--ruddy-blue);
 }
 
 nav {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    color: #f5f0f6;
-    background-color: var(--oxford-blue);
-    padding: 16px 20px;
-    font-family: "Raleway";
-    font-size: 2rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  color: #f5f0f6;
+  background-color: var(--oxford-blue);
+  padding: 16px 20px;
+  font-family: "Raleway";
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 nav > div {
-    display: flex;
-    gap: 8px;
-    align-items: center;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
-.material-symbols-outlined.md-48{
-    font-size: 48px;
+.material-symbols-outlined.md-48 {
+  font-size: 48px;
 }
 
 #cancel {
-    background-color: var(--magnolia);
-    color: var(--chefchaouen-blue);
-    border: 1px solid var(--chefchaouen-blue)
+  background-color: var(--magnolia);
+  color: var(--chefchaouen-blue);
+  border: 1px solid var(--chefchaouen-blue);
 }
 
 dialog {
-    border: 1px solid #9ca3af;
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 20px 38px;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px 38px;
 }
 form {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 60px);
-    gap: 20px;
-    padding: 16px 0px;
-    width: 400px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 60px);
+  gap: 20px;
+  padding: 16px 0px;
+  width: 400px;
 }
 label {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 input:not([type="checkbox"]):not([type="radio"]) {
-    border: 1px solid #d1d5db;
-    padding: 6px;
-    outline: none;
-    border-radius: 6px;
-    font-size: inherit;
+  border: 1px solid #d1d5db;
+  padding: 6px;
+  outline: none;
+  border-radius: 6px;
+  font-size: inherit;
 }
 input:not([type="checkbox"]):not([type="radio"]):focus {
-    border: 2px solid var(--tiffany-blue);
-    box-shadow: var(--tiffany-blue) 0px 1px 4px;
+  border: 2px solid var(--tiffany-blue);
+  box-shadow: var(--tiffany-blue) 0px 1px 4px;
 }
 
-form > div, .buttons {
-    display: flex;
-    gap: 8px;
+form > div,
+.buttons {
+  display: flex;
+  gap: 8px;
 }
 
 span.card {
-    padding: 20px 12px;
-    width: 80px;
-    cursor: pointer;
-    position: relative;
+  padding: 20px 12px;
+  width: 80px;
+  cursor: pointer;
+  position: relative;
 }
 
-
-
 input[type="radio"] + span::after {
-    content: '';
-    border-radius: 50%;
-    border: 1px solid #d1d5db;
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    width: 15px;
-    height: 15px;
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  content: "";
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 15px;
+  height: 15px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input[type="radio"]:checked + span {
-    border: 2px solid green;
-    background: rgb(217, 248, 217);
+  border: 2px solid green;
+  background: rgb(217, 248, 217);
 }
 input[type="radio"]:checked + span::after {
-    content: '✔️';
+  content: "✔️";
 }
 .primary-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 15ch;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 15ch;
 }
 .secondary-title {
-    font-weight: 600;
-    color: #4b5563;
-    margin: 0;
-    font-size: 1rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin: 0;
+  font-size: 1rem;
 }
 .buttons {
-    margin-top: 18px;
-    justify-content: flex-end;
+  margin-top: 18px;
+  justify-content: flex-end;
 }
 button.delete {
-    background-color: red;
-    display: flex;
-    align-items: center;
-    gap: 4px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 .status {
-    border-radius: 50px;
-    background-color: gray;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.75rem;
-    padding: 4px;
-    text-align: center;
-    color: white;
-    font-weight: 600;
+  border-radius: 50px;
+  background-color: gray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  padding: 4px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
 }
 .header {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
-    margin-top: 8px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  margin-top: 8px;
 }
 img {
-    margin: auto;
+  margin: auto;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):invalid {
+  border: 1px solid red;
+}
+
+.error {
+  color: red;
+  display: flex;
+  align-items: center;
+}
+
+.error-icon {
+    width: 18px;
+    height: 18px;
+    fill: red;
 }

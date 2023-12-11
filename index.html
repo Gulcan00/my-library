@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
 </head>
 <body>
         <nav>
@@ -28,22 +28,25 @@
        
         <dialog>
             <h1 class="primary-title">Add a book</h1>
-            <form action="/" method="get">
+            <form action="/" method="get" >
                 <label for="title">
                     Title
                     <input id="title" name="title" type="text" required>
+                    <span class="error"></span>
                 </label>
                 <label for="author">
                     Author
                     <input id="author" name="author" type="text" required pattern="[A-Za-z]+( [A-Za-z]+)?$">
+                    <span class="error"></span>
                 </label>
                 <label for="num-pages">
                     Number of pages
                     <input id="num-pages" name="num-pages" type="number">
+                    <span class="error"></span>
                 </label>
                 <div>
                     <label for="read">
-                        <input type="radio" name="read" id="read" value="true">
+                        <input type="radio" name="read" id="read" value="true" required>
                         <span class="card">
                             Read
                         </span>
@@ -54,6 +57,7 @@
                             Not read
                         </span>
                     </label>
+                    <span class="error"></span>
                 </div>
                 <div class="buttons">
                     <button id="cancel" type="button">Cancel</button>
