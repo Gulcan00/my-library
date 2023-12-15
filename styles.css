@@ -217,15 +217,3 @@ img {
 input:not([type="checkbox"]):not([type="radio"]):invalid {
   border: 1px solid red;
 }
-
-.error {
-  color: red;
-  display: flex;
-  align-items: center;
-}
-
-.error-icon {
-    width: 18px;
-    height: 18px;
-    fill: red;
-}

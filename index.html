@@ -30,23 +30,20 @@
             <h1 class="primary-title">Add a book</h1>
             <form action="/" method="get" >
                 <label for="title">
-                    Title
+                    <span>Title<span aria-label="required">*</span></span>
                     <input id="title" name="title" type="text" required>
-                    <span class="error"></span>
                 </label>
                 <label for="author">
-                    Author
+                    <span>Author<span aria-label="required">*</span></span>
                     <input id="author" name="author" type="text" required pattern="[A-Za-z]+( [A-Za-z]+)?$">
-                    <span class="error"></span>
                 </label>
                 <label for="num-pages">
                     Number of pages
                     <input id="num-pages" name="num-pages" type="number">
-                    <span class="error"></span>
                 </label>
                 <div>
                     <label for="read">
-                        <input type="radio" name="read" id="read" value="true" required>
+                        <input type="radio" name="read" id="read" value="true">
                         <span class="card">
                             Read
                         </span>
@@ -57,7 +54,6 @@
                             Not read
                         </span>
                     </label>
-                    <span class="error"></span>
                 </div>
                 <div class="buttons">
                     <button id="cancel" type="button">Cancel</button>
